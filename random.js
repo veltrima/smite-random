@@ -479,12 +479,10 @@ $(document).ready(function(){
         if (selected !== null) {
           $("#chosen").text(selected);
           $("#god-card").attr("src", getGodCard(selected));
-          $("#god-card").show();
         }
         else {
           $("#chosen").text("Oops, change your criteria!");
-          $("#god-card").attr("src", "");
-          $("#god-card").hide();
+          $("#god-card").attr("src", "error.png");
         }
     });
     $("#reset-role").click(function(){
@@ -493,8 +491,11 @@ $(document).ready(function(){
     $("#reset-type").click(function(){
         $("input[name=type]").prop("checked", true);
     });
-    $("#reset-god-selection").click(function(){
+    $("#all-god-selection").click(function(){
         $("input[name=god]").prop("checked", true);
+    });
+    $("#no-god-selection").click(function(){
+        $("input[name=god]").prop("checked", false);
     });
     $("#toggle-god-selection").click(function(){
       $("#god-selection").toggle();
@@ -520,14 +521,23 @@ function sortJSON(data) {
 function generateGodCheckboxes() {
   var html = "";
   var sorted_gods = sortJSON(god_list);
-  for (var i=0; i<sorted_gods.length; i++) {
-    html += "<input type=\"checkbox\" name=\"god\" value=\"" + sorted_gods[i].Name + "\" checked>" + sorted_gods[i].Name + "<br>";
+  var num_gods = sorted_gods.length;
+  var col_size = Math.ceil(num_gods/4); //Divide into columns
+  for (var j=0; j<4; j++) {
+    html += "<div id=\"god-col-" + j + "\" class=\"col-3\">";
+    for (var i=0; i<col_size; i++) {
+      if ((j*col_size + i) >= num_gods) {
+        break;
+      }
+      html += "<input type=\"checkbox\" name=\"god\" value=\"" + sorted_gods[(j*col_size + i)].Name + "\" checked>" + sorted_gods[(j*col_size + i)].Name + "<br>";
+    }
+    html += "</div>";
   }
   return html;
 }
 
 function getGodCard(god) {
-  god = god.replace(" ", "-");
+  god = god.replace(/ /g,"-");
   god = god.replace("'", "");
   return "https://smitefire.com/images/god/card/" + god + ".png";
 }

@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="grid/simple-grid.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="random.js"></script>
+  <title>God Randomizer</title>
 </head>
 <body>
-
-<h2>Smite Random</h2>
-
-<p id="chosen">Click the button!</p>
-
-<img id="god-card" src="" hidden/>
-
-<button type="button" id="random">Random</button>
-
-<h3>Filter by Role</h3>
-<form action="">
-  <input type="checkbox" name="role" value="Assassin" checked>Assassin<br>
-  <input type="checkbox" name="role" value="Hunter" checked>Hunter<br>
-  <input type="checkbox" name="role" value="Mage" checked>Mage<br>
-  <input type="checkbox" name="role" value="Guardian" checked>Guardian<br>
-  <input type="checkbox" name="role" value="Warrior" checked>Warrior
-</form>
-<button type="button" id="reset-role">Reset</button>
-
-<h3>Filter by Type</h3>
-<form action="">
-  <input type="checkbox" name="type" value="Physical" checked>Physical<br>
-  <input type="checkbox" name="type" value="Magical" checked>Magical<br>
-</form>
-<button type="button" id="reset-type">Reset</button>
-
-<br>
-<button type="button" id="toggle-god-selection">Show God Selection</button>
-<form id="god-selection" action="" hidden>
-</form>
-<button type="button" id="reset-god-selection" hidden>Reset</button>
+  <div class="container main">
+    <div class="header row">
+      <div class="col-12">
+        <h2>Smite God Randomizer</h2>
+      </div>
+    </div>
+    <div class="god-display">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <img id="god-card" src="mystery.png"/>
+          <p id="chosen">Click the button!</p>
+          <button type="button" id="random">Pick for me!</button>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <div class="filters">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4">
+          <h3>Role</h3>
+          <form class="checks" action="">
+            <input type="checkbox" name="role" value="Assassin" checked>Assassin<br>
+            <input type="checkbox" name="role" value="Hunter" checked>Hunter<br>
+            <input type="checkbox" name="role" value="Mage" checked>Mage<br>
+            <input type="checkbox" name="role" value="Guardian" checked>Guardian<br>
+            <input type="checkbox" name="role" value="Warrior" checked>Warrior
+          </form>
+          <button type="button" id="reset-role">Reset</button>
+        </div>
+        <div class="col-4">
+          <h3>Type</h3>
+          <form class="checks" action="">
+            <input type="checkbox" name="type" value="Physical" checked>Physical<br>
+            <input type="checkbox" name="type" value="Magical" checked>Magical<br>
+          </form>
+          <button type="button" id="reset-type">Reset</button>
+        </div>
+        <div class="col-2"></div>
+      </div>
+      <div class="row">
+        <h3>God Pool</h3>
+        <form class="checks" id="god-selection" action="">
+        </form>
+      </div>
+      <div class="row">
+        <button type="button" id="all-god-selection">Select All</button>
+        <button type="button" id="no-god-selection">Select None</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,54 @@
+body {
+  background-color: #f7f7f7;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-image: url("smite_2_vs_2.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+
+#god-card {
+  width:100%;
+  max-width: 300px;
+  height:auto;
+}
+
+#logo {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+
+.main {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.header {
+  text-align: center;
+  background-color: rgba(3, 24, 58, 0.7);
+}
+
+.header h2 {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.god-display {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.filters {
+  text-align: center;
+}
+
+.checks {
+  text-align: left;
+  padding-left: 15px;
+}
