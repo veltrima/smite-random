@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="random.js"></script>
+</head>
+<body>
+
+<h2>Smite Random</h2>
+
+<p id="chosen">Click the button!</p>
+
+<img id="god-card" src="" hidden/>
+
+<button type="button" id="random">Random</button>
+
+<h3>Filter by Role</h3>
+<form action="">
+  <input type="checkbox" name="role" value="Assassin" checked>Assassin<br>
+  <input type="checkbox" name="role" value="Hunter" checked>Hunter<br>
+  <input type="checkbox" name="role" value="Mage" checked>Mage<br>
+  <input type="checkbox" name="role" value="Guardian" checked>Guardian<br>
+  <input type="checkbox" name="role" value="Warrior" checked>Warrior
+</form>
+<button type="button" id="reset-role">Reset</button>
+
+<h3>Filter by Type</h3>
+<form action="">
+  <input type="checkbox" name="type" value="Physical" checked>Physical<br>
+  <input type="checkbox" name="type" value="Magical" checked>Magical<br>
+</form>
+<button type="button" id="reset-type">Reset</button>
+
+<br>
+<button type="button" id="toggle-god-selection">Show God Selection</button>
+<form id="god-selection" action="" hidden>
+</form>
+<button type="button" id="reset-god-selection" hidden>Reset</button>
+</body>
+</html>
