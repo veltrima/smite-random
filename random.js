@@ -529,7 +529,11 @@ function generateGodCheckboxes() {
       if ((j*col_size + i) >= num_gods) {
         break;
       }
-      html += "<input type=\"checkbox\" name=\"god\" value=\"" + sorted_gods[(j*col_size + i)].Name + "\" checked>" + sorted_gods[(j*col_size + i)].Name + "<br>";
+      html += "<label class=\"check check-small\">";
+      html += "<img class=\"god-icon\" src=\"" + getGodIcon(sorted_gods[(j*col_size + i)].Name) + "\"/>";
+      html += sorted_gods[(j*col_size + i)].Name;
+      html += "<input type=\"checkbox\" name=\"god\" value=\"" + sorted_gods[(j*col_size + i)].Name + "\" checked>";
+      html += "<span class=\"checkmark\"></span></label>";
     }
     html += "</div>";
   }
@@ -540,6 +544,12 @@ function getGodCard(god) {
   god = god.replace(/ /g,"-");
   god = god.replace("'", "");
   return "https://smitefire.com/images/god/card/" + god + ".png";
+}
+
+function getGodIcon(god) {
+  god = god.replace(/ /g,"-");
+  god = god.replace("'", "");
+  return "https://smitefire.com/images/god/icon/" + god + ".png";
 }
 
 // Pass the checkbox name to the function

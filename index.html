@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="grid/simple-grid.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="simple-grid.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="random.js"></script>
@@ -22,8 +38,8 @@
         <div class="col-3"></div>
         <div class="col-6">
           <img id="god-card" src="mystery.png"/>
-          <p id="chosen">Click the button!</p>
-          <button type="button" id="random">Pick for me!</button>
+          <h3 id="chosen">Click the button!</h3>
+          <button class="big-button" type="button" id="random">Pick for me!</button>
         </div>
         <div class="col-3"></div>
       </div>
@@ -32,37 +48,73 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-4">
-          <h3>Role</h3>
+          <h4>Role</h4>
           <form class="checks" action="">
-            <input type="checkbox" name="role" value="Assassin" checked>Assassin<br>
-            <input type="checkbox" name="role" value="Hunter" checked>Hunter<br>
-            <input type="checkbox" name="role" value="Mage" checked>Mage<br>
-            <input type="checkbox" name="role" value="Guardian" checked>Guardian<br>
-            <input type="checkbox" name="role" value="Warrior" checked>Warrior
+            <label class="check">Assassin
+              <input type="checkbox" name="role" value="Assassin" checked>
+              <span class="checkmark"></span>
+            </label>
+            <label class="check">Hunter
+              <input type="checkbox" name="role" value="Hunter" checked>
+              <span class="checkmark"></span>
+            </label>
+            <label class="check">Guardian
+              <input type="checkbox" name="role" value="Guardian" checked>
+              <span class="checkmark"></span>
+            </label>
+            <label class="check">Mage
+              <input type="checkbox" name="role" value="Mage" checked>
+              <span class="checkmark"></span>
+            </label>
+            <label class="check">Warrior
+              <input type="checkbox" name="role" value="Warrior" checked>
+              <span class="checkmark"></span>
+            </label>
           </form>
-          <button type="button" id="reset-role">Reset</button>
         </div>
         <div class="col-4">
-          <h3>Type</h3>
+          <h4>Type</h4>
           <form class="checks" action="">
-            <input type="checkbox" name="type" value="Physical" checked>Physical<br>
-            <input type="checkbox" name="type" value="Magical" checked>Magical<br>
+            <label class="check">Physical
+              <input type="checkbox" name="type" value="Physical" checked>
+              <span class="checkmark"></span>
+            </label>
+            <label class="check">Magical
+              <input type="checkbox" name="type" value="Magical" checked>
+              <span class="checkmark"></span>
+            </label>
           </form>
-          <button type="button" id="reset-type">Reset</button>
         </div>
         <div class="col-2"></div>
       </div>
       <div class="row">
-        <h3>God Pool</h3>
+        <div class="col-2"></div>
+        <div class="col-4">
+          <button class="reset-button" type="button" id="reset-role">Reset</button>
+        </div>
+        <div class="col-4">
+          <button class="reset-button" type="button" id="reset-type">Reset</button>
+        </div>
+        <div class="col-2"></div>
+      </div>
+      <div class="row">
+        <h4>God Pool</h4>
         <form class="checks" id="god-selection" action="">
         </form>
       </div>
       <div class="row">
-        <button type="button" id="all-god-selection">Select All</button>
-        <button type="button" id="no-god-selection">Select None</button>
+        <button class="god-pool-button" type="button" id="all-god-selection">Select All</button>
+        <button class="god-pool-button" type="button" id="no-god-selection">Select None</button>
       </div>
     </div>
+    <div class="row footer">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <p>All images, artwork, and concepts are property HiRez Studios. Dice by Les Kleuver and Lightning Bolt by shashank singh from the Noun Project (icon). This webapp is an effort on behalf of the Dacia Squad. Skrrrt!</p>
+        <p>https://www.youtube.com/watch?v=CvgO79ktEmM</p>
+      </div>
+      <div class="col-1"></div>
+    </div>
   </div>
-</div>
 </body>
 </html>
